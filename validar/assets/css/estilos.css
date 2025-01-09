@@ -1,0 +1,367 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: #28517a;
+
+    /* CAMBIOS*/
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    width: 100%;
+    padding: 20px;
+    /*margin: auto;
+
+    /* CAMBIOS*/
+
+    display: flex;
+    justify-content: center;
+    align-items: center
+
+}
+
+.contenedor__todo{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+}
+
+.caja__trasera{
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 128, 255, 0.5);
+
+}
+
+.caja__trasera div{
+    margin: 70px 40px;
+    color: white;
+    transition: all 500ms;
+}
+
+
+.caja__trasera div p,
+.caja__trasera button{
+    margin-top: 30px;
+}
+
+.caja__trasera div h3{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.caja__trasera div h2{
+    font-weight: 300;
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.caja__trasera div p{
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.caja__trasera button{
+    padding: 10px 40px;
+    border: 2px solid #fff;
+    font-size: 14px;
+    background: transparent;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    transition: all 300ms;
+}
+
+.caja__trasera button:hover{
+    background: #fff;
+    color: #46A2FD;
+}
+
+/*Formularios*/
+
+.contenedor__login-register{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    top: -185px;
+    left: 10px;
+
+    /*La transicion va despues del codigo JS*/
+    transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+
+.contenedor__login-register form{
+    width: 100%;
+    padding: 70px 20px;
+    background: white;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.contenedor__login-register form h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #46A2FD;
+}
+
+.contenedor__login-register form input{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: #F2F2F2;
+    font-size: 16px;
+    outline: none;
+}
+
+.contenedor__login-register form button{
+    padding: 10px 40px;
+    margin-top: 40px;
+    border: none;
+    font-size: 14px;
+    background: #46A2FD;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+}
+
+
+
+
+.formulario__login{
+    opacity: 1;
+    display: block;
+}
+.formulario__register{
+    display: none;
+}
+
+
+/* El siguiente código es para main */
+
+
+.contenedor__todo__main{
+    width: 100%;
+    max-width: 1200px;
+    height: auto; /* Ajusta la altura automáticamente según el contenido */
+    padding: 50px;
+    background-color: rgba(0, 128, 255, 0.5);
+    border: 2px solid #5a76e4;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+}
+
+.contenedor__todo__main div h2 {
+    font-weight: 450;
+    font-size: 28px;
+    letter-spacing: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #28517a;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.panel {
+    background-color: rgba(255, 255, 255, 0.8);
+    background: #F2F2F2;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    margin: 25px;
+    display: flex;
+    flex-direction: column; /* Alinea los elementos en una columna */
+    justify-content: space-between; /* Espacia el contenido para que el botón quede abajo */
+    height: 100%; /* Para mantener el tamaño del panel */
+}
+
+.panel .lista__main {
+    flex-grow: 1; /* Hace que los botones de la lista ocupen el espacio disponible */
+}
+
+.panel h2 {
+    text-align: center;
+    /* hacer la letra de tamaño 10px */
+    font-size: 8px;
+    color: #242222;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.panel .create-btn {
+    padding: 10px 10px;
+    margin-top: 20px; /* Puedes ajustar el margen superior si es necesario */
+    border: none;
+    font-size: 14px;
+    background: #46A2FD;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+}
+
+.panel button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: white;
+}
+
+.panel button:hover {
+    background-color: #46A2FD;
+    color: #fff;
+}
+
+
+.panel .create-btn:hover {
+    background-color: #28517a;
+    color: #fff;
+}
+
+.lista__main {
+    min-height: 40vh;
+}
+
+/* aca termina el código para main */
+
+
+/* ACA ARRANCA NEWSENSOR*/
+
+.contenedor__todo__nuevosensor {
+    width: 100%;
+    max-width: 1200px;
+    height: auto; /* Ajusta la altura automáticamente según el contenido */
+    padding: 50px;
+    background-color: rgba(0, 128, 255, 0.5);
+    border: 2px solid #5a76e4;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column; /* Cambia la dirección para permitir el centrado */
+    align-items: center; /* Centra el contenido horizontalmente */
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.contenedor__todo__nuevosensor h2{
+    color: #fff;
+    font-size: 38px;
+    font-weight: 200;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+}
+
+.formulario__sensor {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    gap: 40px; /* Espacio entre los inputs */
+    width: 100%; /* Hacer que el grid ocupe el ancho completo del contenedor */
+    max-width: 800px; /* Puedes ajustar este valor si deseas limitar el ancho del formulario */
+}
+
+.formulario__sensor input {
+    width: 100%; /* Asegura que los inputs ocupen todo el ancho disponible */
+    padding: 10px;
+    border: none;
+    background: #F2F2F2;
+    font-size: 16px;
+    outline: none;
+}
+
+.formulario__sensor button {
+    grid-column: span 2; /* El botón ocupará ambas columnas */
+    justify-self: center; /* Centra el botón horizontalmente */
+    padding: 10px 40px;
+    margin-top: 30px;
+    border: none;
+    font-size: 14px;
+    background: #46A2FD;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.formulario__sensor button:hover {
+    background: #28517a;
+}
+
+
+.formulario__sensor h2 {
+    grid-column: span 2; /* Hace que el título ocupe las dos columnas */
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 200;
+    letter-spacing: 4px;
+}
+
+/* ACA TERMINA NEWSENSOR*/
+
+
+
+
+@media screen and (max-width: 850px){
+
+    main{
+        margin-top: 50px;
+    }
+
+    .caja__trasera{
+        max-width: 350px;
+        height: 300px;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .caja__trasera div{
+        margin: 0px;
+        position: absolute;
+    }
+
+
+    /*Formularios*/
+
+    .contenedor__login-register{
+        top: -10px;
+        left: -5px;
+        margin: auto;
+    }
+
+    .contenedor__login-register form{
+        position: relative;
+    }
+}
+
+

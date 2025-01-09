@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login y Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+    
+    <!-- prueba  -->
+    <style>
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 10px;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            margin: 20px auto;
+            width: 40%;
+            text-align: center;
+            position: fixed;
+            bottom: 35px; /* Ajuste para que esté en la parte superior */
+            left: 50%;
+            transform: translateX(-50%); /* Centrado horizontal */
+            z-index: 1000; /* Asegura que el mensaje esté sobre otros elementos */
+            display: none; /* Oculto por defecto */
+        }
+    </style>
+
+    <style>
+        .error-message {
+            background-color: #c4636b;
+            color: #5b1b21;
+            padding: 10px;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            margin: 20px auto;
+            width: 40%;
+            text-align: center;
+            position: fixed;
+            bottom: 35px; /* Ajuste para que esté en la parte superior */
+            left: 50%;
+            transform: translateX(-50%); /* Centrado horizontal */
+            z-index: 1000; /* Asegura que el mensaje esté sobre otros elementos */
+            display: none; /* Oculto por defecto */
+        }
+    </style>
+
+    <!-- //fin -->
+
+</head>
+<body>
+        <main>
+            <div class="contenedor__todo">
+
+                <div class="caja__trasera">
+                    <div class="caja__trasera-login">
+                        <h2>S I M M E R</h2>
+                        <h3>¿Ya tienes una cuenta?</h3>
+                        <p>Inicia sesión para entrar en el sistema.</p>
+                        <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+                    </div>
+                    <div class="caja__trasera-register">
+                        <h2>S I M M E R</h2>
+                        <h3>¿Aún no tienes una cuenta?</h3>
+                        <p>Regístrate para que puedas iniciar sesión.</p>
+                        <button id="btn__registrarse">Registrarse</button>
+                    </div>
+                </div>
+
+                <!--Formulario de Login y registro-->
+                <div class="contenedor__login-register">
+                    <!--Login-->
+                    <form action="validar.php" class="formulario__login" method="post">
+                        <h2>Iniciar Sesión</h2>
+                        <input type="text" placeholder="Usuario" name="usuario">
+                        <input type="password" placeholder="Contraseña" name="password">
+                        <button>Entrar</button>
+                    </form>
+
+                    <!--Register-->
+                    <form action="registrar.php" class="formulario__register" method="post">
+                        <h2>Registrarse</h2>
+                        <input type="text" placeholder="Nombre" name="nombre" required>
+                        <input type="text" placeholder="Apellido" name="apellido" required>
+                        <input type="correo" placeholder="Correo Electrónico" name="correo" required>
+                        <input type="text" placeholder="Usuario" name="usuario" required>
+                        <input type="password" placeholder="Contraseña" name="password" required>
+                        <button type="submit">Registrarse</button>
+                    </form>                    
+                </div>
+
+                <!-- // prueba -->
+                <!-- Contenedor para el mensaje de éxito -->
+                <div id="success-message" class="success-message">
+                    Registro exitoso.
+                </div>
+                <!-- Contenedor para mensajes de error -->
+                <div id="error-message" class="error-message"></div>
+                <!-- // fin -->
+
+            </div>
+
+        </main>
+
+        <!-- // prueba -->
+        <script>
+            // Verificar si el registro fue exitoso
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('registro') === 'exitoso') {
+                document.getElementById('success-message').style.display = 'block';
+            }
+            setTimeout(function() {
+                document.getElementById('success-message').style.display = 'none';
+                }, 6000); // 6 segundos
+
+        </script>
+
+        <script>
+            // Verificar si hay un error en la URL
+            const params2 = new URLSearchParams(window.location.search);
+            const errorType = params2.get('error');
+
+            if (errorType) {
+                const errorMessage = document.getElementById('error-message');
+                if (errorType === 'contraseña') {
+                    errorMessage.textContent = 'Contraseña incorrecta.';
+                } else if (errorType === 'usuario') {
+                    errorMessage.textContent = 'Usuario inexistente.';
+                }
+                errorMessage.style.display = 'block';
+                // Ocultar el mensaje de error después de 10 segundos
+                setTimeout(function() {
+                    errorMessage.style.display = 'none';
+                }, 6000); // 6 segundos
+            }
+        </script>
+
+        <!-- // fin -->
+
+        <script src="assets/js/script.js"></script>
+</body>
+</html>
